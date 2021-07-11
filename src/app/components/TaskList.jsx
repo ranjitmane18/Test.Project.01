@@ -1,6 +1,6 @@
 import React from 'react';  
 import { connect } from 'react-redux';
-import { requestTaskCreation } from '../store/mutation';  
+import { requestTaskCreation } from '../store/mutations';  
 
 export const TaskList = ({tasks, name , id , createNewTask}) => (
     <div>
@@ -8,7 +8,7 @@ export const TaskList = ({tasks, name , id , createNewTask}) => (
          <h3>{name}</h3>   
         </div>
         <div>
-            {tasks.map(task => (<div key="{task.id}"> {task.id} {task.name}</div> ))}
+            {tasks.map(task => (<div key={task.id}> {task.id} {task.name}</div> ))}
         </div>
 
         <button onClick={()=>{ createNewTask(id)}}>Add new task</button>
